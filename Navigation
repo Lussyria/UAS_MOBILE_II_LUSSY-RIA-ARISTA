@@ -1,0 +1,139 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title : 'Routing Navigation',
+    initialRoute : '/',
+    routes : {
+      '/' : (context) => Menu(),
+      HalamanPertama.routeName : (context) => HalamanPertama(),
+      HalamanKedua.routeName : (context) => HalamanKedua(),
+      HalamanKetiga.routeName : (context) => HalamanKetiga(),
+ 
+    },
+  ));
+}
+
+class Menu extends StatelessWidget {
+  @override
+  Widget build (BuildContext context) {
+    return Scaffold(
+      appBar : AppBar(
+        title : Text ('UAS MOBILE 2 LUSSY RIA ARISTA'),
+      ),
+      body : Center(
+        child : GridView.count(
+          crossAxisCount: 3,
+            children:<Widget>[RaisedButton(
+              child : Text ('DATA PRIBADI'),
+              onPressed: (){
+
+                Navigator.pushNamed(context, HalamanPertama.routeName);
+              },
+            ),
+            RaisedButton(
+              child : Text('RIWAYAT PENDIDIKAN'),
+              onPressed : (){
+
+                Navigator.pushNamed(context, HalamanKedua.routeName);
+              },
+            ),
+            RaisedButton(
+              child : Text('CONTACT PERSON'),
+              onPressed : (){
+
+                Navigator.pushNamed(context, HalamanKetiga.routeName);
+              },
+            ),
+           
+              
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
+class HalamanPertama extends StatelessWidget {
+  static const String routeName = "/halamanPertama";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("DATA KELOMPOK"),
+      ),
+      body: Column(
+          children : <Widget>[
+            Text('ASSALAMUALAIKUM WARAHMATULLAHI WABARAKATUH'),
+            Text('NIRM        : 2018020162'),
+            Text('NAMA        : LUSSY RIA ARISTA'),
+            Text('KELAS       : 6SIA10'),
+            Text('MATA KULIAH : MOBILE 2'), 
+
+          ]
+          
+        ),
+      
+    );
+  }
+}
+class HalamanKedua extends StatelessWidget {
+  static const String routeName = "/halamanKedua";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("RIWAYAT PENDIDIKAN"),
+      ),
+      body: Column(
+          children : <Widget>[
+            Text('SD      : SD NEGERI 101360 PADANG BOLAK'),
+            Text('SMP     : SMP NEGERI 6 PADANG BOLAK'),
+            Text('SMA     : SMK NEGERI 1 PADANG SIDEMPUAN'), 
+            Text('KULIAH  : STMIK TRIGUNA DHARMA MEDAN'),
+
+          ]
+          
+        ),
+      
+    );
+  }
+}
+class HalamanKetiga extends StatelessWidget {
+  static const String routeName = "/halamanKetiga";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("CONTACT PERSON"),
+      ),
+     body: Column(
+          children : <Widget>[
+            Text('Whatsapp  : 081265304724'),
+            Text('Facebook  : Lussy Rai Arista'),
+            Text('Instagram : lyriaarista'),
+            Text('Line      : lussyriaarista'), 
+            Text('Twitter   : lussyriaarista'),
+
+          ]
+          
+        ),
+      
+    );
+  }
+}
+class  HalamanKeenam extends StatelessWidget {
+  static const String routeName = "/halamanKeenam";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar : AppBar(
+        title : Text("Quotes Motivation"),
+      ),
+      body: Center(
+        child:Text('Halaman Keenam'),
+      ),
+    );
+  }
+}
